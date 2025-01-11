@@ -4,6 +4,7 @@ import Link from "next/link"; // Next.js Link for navigation
 import {
   Home,
   Shield,
+  Bell,
   LayoutDashboard,
   Wallet,
   CreditCard,
@@ -65,7 +66,7 @@ const Navbar = () => {
             <ul
                 className={`${
                 isOpen ? 'block' : 'hidden'
-                } md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-white`}
+                } md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 text-white`}
             >
                 {navigation.map((item, index) => (
                 <li key={index} className="flex items-center space-x-2 hover:bg-purple-700 p-2 rounded-md transition duration-200 ease-in-out">
@@ -77,6 +78,33 @@ const Navbar = () => {
                 ))}
             </ul>
         </nav>
+
+        {/* Right Section with Notification Bell, Balance, and Profile */}
+        <div className="md:flex md:justify-between mt-4">
+                {/* Notification Bell and Balance */}
+                <div className="flex items-center space-x-6 text-white">
+                    <div className="relative">
+                        <Bell className="h-6 w-6" />
+                        <span className="absolute top-0 right-0 bg-red-500 text-xs text-white rounded-full px-2 py-1">
+                        3
+                        </span>
+                    </div>
+                    <div className="text-sm">
+                        <span>Balance:</span>
+                        <span className="font-semibold">₹0</span>
+                    </div>
+                </div>
+
+                {/* User Profile */}
+                <div className="flex items-center mt-4 md:mt-0 space-x-4">
+                    <div className="flex flex-col items-end">
+                        <div className="text-white font-semibold">John Doe</div>
+                        <div className="text-xs text-gray-400 bg-yellow-500 px-2 py-1 rounded-full">
+                        Premium User
+                        </div>
+                    </div>
+                </div>
+            </div>
       </header>
     </div>
   );
