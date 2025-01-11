@@ -6,17 +6,9 @@ export default function Home() {
   return (
     <>
     {/* <Script onload="{}"></Script> */}
-    <div>
+    <div className="flex items-center justify-center h-screen bg-slate-900">
+      <h1 className="text-center text-sky-400 text-2xl self-center">I'm building this NextJS App</h1>
     </div>
-    <Script
-        id="example-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            alert('Hello from Next.js script!');
-          `,
-        }}
-      />
     </>
   );
 }
